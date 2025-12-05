@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cat Tap Game</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      background-color: #fce4ec;
+    }
+
+    h1 {
+      margin-top: 30px;
+    }
+
+    #cat {
+      font-size: 90px;
+      cursor: pointer;
+      margin-top: 60px;
+    }
+
+    #score {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    #message {
+      margin-top: 15px;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>🐱 Cat Tap Game</h1>
+  <p>Tap the cat to make it happy!</p>
+
+  <div id="cat">😺</div>
+
+  <div id="score">Score: 0</div>
+  <div id="message"></div>
+
+  <script>
+    let score = 0;
+
+    const cat = document.getElementById("cat");
+    const scoreDisplay = document.getElementById("score");
+    const message = document.getElementById("message");
+
+    cat.onclick = function() {
+      score++;
+      scoreDisplay.innerText = "Score: " + score;
+
+      if (score < 5) {
+        message.innerText = "Cat is curious...";
+        cat.innerText = "😼";
+      } 
+      else if (score < 10) {
+        message.innerText = "Cat is getting happy!";
+        cat.innerText = "😺";
+      } 
+      else {
+        message.innerText = "Cat LOVES you ❤️";
+        cat.innerText = "😻";
+      }
+    };
+  </script>
+
+</body>
+</html>
